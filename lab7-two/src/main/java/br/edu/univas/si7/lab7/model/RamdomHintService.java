@@ -13,6 +13,6 @@ public class RamdomHintService implements HintService {
 	private Random rand = new Random();
 	
 	public String getHint() {
-		return hints[rand.nextInt(3)];
+		return hints[rand.nextInt(hints.length)];
 	}
 }

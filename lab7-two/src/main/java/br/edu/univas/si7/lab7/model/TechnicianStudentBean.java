@@ -13,7 +13,7 @@ public class TechnicianStudentBean implements StudentInterface {
 	}
 
 	public String getWelcomeMessage() {
-		return "Welcome to technician cource!";
+		return "Welcome to technician course!";
 	}
 
 	public String getHintOfTheDay() {
@@ -21,18 +21,22 @@ public class TechnicianStudentBean implements StudentInterface {
 	}
 
 	public String getSite() {
+		System.out.println("Inside getSite of TechnicianStudentBean.");
 		return site;
 	}
 
 	public void setSite(String site) {
+		System.out.println("Inside setSite of TechnicianStudentBean.");
 		this.site = site;
 	}
 
 	public String getInstitution() {
+		System.out.println("Inside getInstitution of TechnicianStudentBean.");
 		return institution;
 	}
 
 	public void setInstitution(String institution) {
+		System.out.println("Inside setInstitution of TechnicianStudentBean.");
 		this.institution = institution;
 	}
 }

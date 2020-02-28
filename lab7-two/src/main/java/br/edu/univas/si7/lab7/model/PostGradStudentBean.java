@@ -18,7 +18,7 @@ public class PostGradStudentBean implements StudentInterface {
 	}
 
 	public String getWelcomeMessage() {
-		return "Welcome to post graduate cource!";
+		return "Welcome to post graduate course!";
 	}
 
 	public String getHintOfTheDay() {
