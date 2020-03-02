@@ -2,7 +2,10 @@ package br.edu.univas.si7.lab7.model;
 
 import java.util.Random;
 
-public class RamdomHintService implements HintService {
+import org.springframework.stereotype.Component;
+
+@Component
+public class RandomHintService implements HintService {
 
 	String [] hints = new String [] {
 			"Don't collect doubts...",

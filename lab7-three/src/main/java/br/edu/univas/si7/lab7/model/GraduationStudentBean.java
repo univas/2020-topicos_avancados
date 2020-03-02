@@ -1,12 +1,14 @@
 package br.edu.univas.si7.lab7.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component//bean id default = graduationStudentBean
 public class GraduationStudentBean implements StudentInterface {
 
 	@Autowired //injeta um objeto de uma classe que implementa HintService
+	@Qualifier("randomHintService")
 	private HintService hintService;
 	
 	public GraduationStudentBean() {
