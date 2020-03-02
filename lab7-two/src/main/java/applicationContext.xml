@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+	<bean id="graduationBean"
+		class="br.edu.univas.si7.lab7.model.GraduationStudentBean">
+
+		<!-- name: nome do atributo ref: referência do objeto para injetar via 
+			set -->
+		<property name="hintService" ref="simpleHintServiceBean"></property>
+	</bean>
+
+	<bean id="postGraduationBean"
+		class="br.edu.univas.si7.lab7.model.PostGradStudentBean">
+		<!-- ref: referência do objeto para injetar via construtor -->
+		<constructor-arg ref="simpleHintServiceBean"></constructor-arg>
+	</bean>
+
+	<bean id="technicianStudentBean"
+		class="br.edu.univas.si7.lab7.model.TechnicianStudentBean">
+		<constructor-arg ref="simpleHintServiceBean"></constructor-arg>
+		
+		<property name="site" value="univas.edu.br"></property>
+		<property name="institution" value="Univás"></property>
+	</bean>
+
+	<bean id="simpleHintServiceBean"
+		class="br.edu.univas.si7.lab7.model.SimpleHintService">
+	</bean>
+
+</beans>
