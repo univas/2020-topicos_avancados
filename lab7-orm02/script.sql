@@ -1,6 +1,6 @@
 
 CREATE TABLE Instructor_detail (
-                auto_id INTEGER NOT NULL,
+                auto_id SERIAL NOT NULL,
                 linkedIn VARCHAR(100) NOT NULL,
                 skype VARCHAR(50) NOT NULL,
                 CONSTRAINT instructor_detail_pk PRIMARY KEY (auto_id)
@@ -25,7 +25,7 @@ CREATE TABLE Course (
 
 
 CREATE TABLE Review (
-                auto_id INTEGER NOT NULL,
+                auto_id SERIAL NOT NULL,
                 comment VARCHAR(200) NOT NULL,
                 course_code_fk VARCHAR(10) NOT NULL,
                 CONSTRAINT review_pk PRIMARY KEY (auto_id)
