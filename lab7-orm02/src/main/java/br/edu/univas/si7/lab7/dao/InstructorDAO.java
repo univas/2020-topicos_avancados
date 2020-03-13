@@ -3,6 +3,7 @@ package br.edu.univas.si7.lab7.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -34,6 +35,12 @@ public class InstructorDAO {
 
 	public Instructor findInstructorById(int reg) {
 		return em.find(Instructor.class, reg);
+	}
+
+	public List<Instructor> findInstructorByName(String name) {
+		TypedQuery<Instructor> query = em.createNamedQuery("Instructor.findByName", Instructor.class);
+		query.setParameter("name", name);
+		return query.getResultList();
 	}
 
 	public void removeInstructor(int registration) {

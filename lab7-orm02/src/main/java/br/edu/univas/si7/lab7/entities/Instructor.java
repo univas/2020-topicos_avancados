@@ -5,7 +5,10 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@NamedQuery(name = "Instructor.findAll", query = "SELECT i FROM Instructor i")
+@NamedQueries ( {
+	@NamedQuery(name = "Instructor.findAll", query = "SELECT i FROM Instructor i"),
+	@NamedQuery(name = "Instructor.findByName", query = "SELECT i FROM Instructor i where i.name = :name")	
+})
 public class Instructor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
