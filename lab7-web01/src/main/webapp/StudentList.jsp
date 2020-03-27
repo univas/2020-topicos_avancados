@@ -11,22 +11,26 @@
 <body>
 
 <c:if test="${empty studentList}">
-	<h3>A lista de alunos está vazia.</h3>
+	<h3>The student list is empty.</h3>
 </c:if>
 
 <c:if test="${not empty studentList}">
 
+	<a href="/lab7-web01/NewStudent.jsp">Create new Student</a>
+
 	<table border=true>
 	
 		<tr>
-			<th>Registro</th>
-			<th>Nome</th>
+			<th>Register</th>
+			<th>Name</th>
+			<th>Action</th>
 		</tr>
 	
 		<c:forEach items="${studentList}" var="student">
 			<tr>
 				<td>${student.register}</td>
 				<td>${student.name}</td>
+				<td><a href="???">Edit student</a></td> <!-- Exercício: implementar uma edição de Student. -->
 			</tr>
 		</c:forEach>
 	
