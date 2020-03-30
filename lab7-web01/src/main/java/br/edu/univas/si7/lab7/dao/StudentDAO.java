@@ -21,14 +21,14 @@ public class StudentDAO {
 		em.getTransaction().commit();
 	}
 
-	public void altera(Student student) {
+	public void update(Student student) {
 		em.getTransaction().begin();
 		em.merge(student);
 		em.getTransaction().commit();
 	}
 
 	public List<Student> listAll() {
-		return em.createQuery("select s from Student s", Student.class).getResultList();
+		return em.createQuery("select s from Student s order by s.register", Student.class).getResultList();
 	}
 
 	public Student findById(int reg) {

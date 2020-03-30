@@ -30,7 +30,9 @@
 			<tr>
 				<td>${student.register}</td>
 				<td>${student.name}</td>
-				<td><a href="???">Edit student</a></td> <!-- Exercício: implementar uma edição de Student. -->
+				
+				<!-- Exercício: implementar uma edição de Student. -->
+				<td><a href="/lab7-web01/StudentService?type=edit&register=${student.register}">Edit student</a></td>
 			</tr>
 		</c:forEach>
 	

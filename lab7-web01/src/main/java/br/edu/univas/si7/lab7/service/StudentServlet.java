@@ -1,7 +1,6 @@
 package br.edu.univas.si7.lab7.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -19,11 +18,22 @@ import br.edu.univas.si7.lab7.entities.Student;
 
 @WebServlet("/StudentService")
 public class StudentServlet extends HttpServlet {
-
+	
+	//apenas como exemplo didático
+	private AnnotationConfigApplicationContext context = 
+			new AnnotationConfigApplicationContext(StudentConfig.class);
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		System.out.println("Chamou doGet de StudentService");
+		
+		//ajuste para editar um student
+		String type = req.getParameter("type");//controla o fluxo de edição/novo
+		if("edit".equals(type)) {
+			processEdit(req, resp);
+			return;
+		}
 		
 		//TODO: Exercício: trazer a lista de Students do banco de dados
 		//1 - copiar as classes do projeto lab7-orm01: StudentConfig, StudentDAO e Student (entity)
@@ -36,25 +46,15 @@ public class StudentServlet extends HttpServlet {
 		//Observação 3: Atualizar o pom.xml
 		//Observação 4: Ajustar as configurações de conexão com o banco de dados, se necessário.
 		
-		
-		AnnotationConfigApplicationContext context = 
-				new AnnotationConfigApplicationContext(StudentConfig.class);
-		
 		StudentDAO dao = context.getBean("studentDAO", StudentDAO.class);
 		
 		List<Student> studentList = dao.listAll();
 
-		context.close();
-
 //		//criar uma lista fixa de objetos Student
-//		Student st1 = new Student(1, "João");
-//		Student st2 = new Student(2, "Joaquim");
-//		Student st3 = new Student(3, "Júlia");
-//		
 //		List<Student> studentList = new ArrayList<Student>();
-//		lista.add(st1);
-//		lista.add(st2);
-//		lista.add(st3);
+//		studentList.add(new Student(1, "João"));
+//		studentList.add(new Student(2, "Joaquim"));
+//		studentList.add(new Student(3, "Júlia"));
 		
 		//setar a lista como atributo do request
 		req.setAttribute("studentList", studentList);
@@ -74,25 +74,43 @@ public class StudentServlet extends HttpServlet {
 		
 		String registerStr = req.getParameter("register");
 		String name = req.getParameter("name");
+		String type = req.getParameter("type");//controla o fluxo de editar/novo
 		
 		int register = Integer.parseInt(registerStr); //converte de String para int
 		
 		Student student = new Student(register, name);
 		
-		AnnotationConfigApplicationContext context = 
-				new AnnotationConfigApplicationContext(StudentConfig.class);
-		
 		StudentDAO dao = context.getBean("studentDAO", StudentDAO.class);
 
-		dao.save(student);
-		
-		context.close();
-		
+		if("update".equals(type)) {
+			dao.update(student);
+		} else {
+			dao.save(student);
+		}
 		//direciona para a tela de listagem de students
 		this.doGet(req, resp);
 	}
 	
 	//TODO: Exercício: implementar uma edição de Student.
 	
-	
+	protected void processEdit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String registerStr = req.getParameter("register");
+		int register = Integer.parseInt(registerStr); //converte de String para int
+		
+		StudentDAO dao = context.getBean("studentDAO", StudentDAO.class);
+
+		Student student = dao.findById(register);
+		if(student == null) { //se não achou criar um novo para aparecer vazio na tela
+			student = new Student();
+		}
+		
+		 //ajustei o arquivo NewStudent.jsp para receber as informações do objeto studentToEdit
+		req.setAttribute("studentToEdit", student);
+		//usado para controlar o fluxo no doGet e doPost devido ao edit/update
+		req.setAttribute("actionType", "update");
+		
+		//abre a tela NewStudent.jsp
+		RequestDispatcher disp = getServletContext().getRequestDispatcher("/NewStudent.jsp");
+		disp.forward(req, resp);
+	}
 }
