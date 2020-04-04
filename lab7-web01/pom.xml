@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.edu.univas.si7.lab7</groupId>
-	<artifactId>lab7-we01</artifactId>
+	<artifactId>lab7-web01</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
-	<name>lab7-we01 Maven Webapp</name>
+	<name>lab7-web01 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -56,6 +56,6 @@
 	
 	</dependencies>
 	<build>
-		<finalName>lab7-we01</finalName>
+		<finalName>lab7-web01</finalName>
 	</build>
 </project>
