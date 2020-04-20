@@ -22,7 +22,7 @@ import br.edu.univas.si7.lab7.entities.Student;
 public class StudentRest {
 
 	//lista temporária em memória
-	private List<Student> listStudents;
+	private List<Student> listStudents; //TODO: usar o banco de dados ao invés da memória
 
 	@PostConstruct //usando para inicalizar a listaf após a criação do serviço REST
 	//serve para fazer alguma inicialização desse REST
