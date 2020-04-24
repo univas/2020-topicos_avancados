@@ -10,13 +10,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import br.edu.univas.si7.lab7.dao.StudentDAO;
+import br.edu.univas.si7.lab7.service.StudentService;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan("br.edu.univas.si7.lab7.entities") 
 @ComponentScan("br.edu.univas.si7.lab7.services")
+@ComponentScan("br.edu.univas.si7.lab7.rest")
 public class StudentConfig {
 
+	@Bean
+	public StudentService studentService() {
+		return new StudentService();
+	}
 	@Bean
 	public StudentDAO studentDAO() { //default beanId: studentDAO (nome do método)
 		return new StudentDAO();

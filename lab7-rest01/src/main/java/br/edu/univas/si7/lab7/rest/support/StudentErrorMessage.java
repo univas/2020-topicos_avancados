@@ -1,33 +1,27 @@
-package br.edu.univas.si7.lab7.services;
+package br.edu.univas.si7.lab7.rest.support;
 
-public class ResponseStatus {
+public class StudentErrorMessage {
 
 	private int status;
 	private String message;
-
-	public ResponseStatus() {
-	}
-
-	public ResponseStatus(int status, String message) {
-		super();
-		this.status = status;
-		this.message = message;
-	}
-
+	private long timeStamp;
+	
 	public int getStatus() {
 		return status;
 	}
-
 	public void setStatus(int status) {
 		this.status = status;
 	}
-
 	public String getMessage() {
 		return message;
 	}
-
 	public void setMessage(String message) {
 		this.message = message;
 	}
-
+	public long getTimeStamp() {
+		return timeStamp;
+	}
+	public void setTimeStamp(long timeStamp) {
+		this.timeStamp = timeStamp;
+	}
 }

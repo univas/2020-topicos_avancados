@@ -35,9 +35,8 @@ public class StudentDAO {
 		return em.find(Student.class, reg);
 	}
 
-	public void remove(int register) {
+	public void remove(final Student studentToRemove) {
 		em.getTransaction().begin();
-		Student studentToRemove = findById(register);
 		if (studentToRemove != null) {
 			em.remove(studentToRemove);
 		}

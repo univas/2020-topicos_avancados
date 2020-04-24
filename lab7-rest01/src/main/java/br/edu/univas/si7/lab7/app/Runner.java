@@ -1,4 +1,4 @@
-package br.edu.univas.si7.lab7.services;
+package br.edu.univas.si7.lab7.app;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

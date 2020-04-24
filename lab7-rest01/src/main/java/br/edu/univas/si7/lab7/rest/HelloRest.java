@@ -1,4 +1,4 @@
-package br.edu.univas.si7.lab7.services;
+package br.edu.univas.si7.lab7.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
