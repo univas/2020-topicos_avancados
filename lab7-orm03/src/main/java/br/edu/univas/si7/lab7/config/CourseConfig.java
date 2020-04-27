@@ -9,10 +9,18 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import br.edu.univas.si7.lab7.dao.InstructorDAO;
+import br.edu.univas.si7.lab7.entities.Instructor;
+import br.edu.univas.si7.lab7.services.InstructorService;
 
 @Configuration
 @ComponentScan("br.edu.univas.si7.lab7.entities")
+@ComponentScan("br.edu.univas.si7.lab7.services")
 public class CourseConfig {
+
+	@Bean
+	public InstructorService instructorService() {
+		return new InstructorService();
+	}
 
 	@Bean
 	public InstructorDAO instructorDAO() {

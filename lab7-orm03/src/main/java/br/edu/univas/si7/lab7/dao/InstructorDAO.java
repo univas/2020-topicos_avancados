@@ -17,35 +17,35 @@ public class InstructorDAO {
 	private EntityManager em;
 
 	//métodos de Instructor
-	public void saveInstructor(Instructor instructor) {
+	public void save(Instructor instructor) {
 		em.getTransaction().begin();
 		em.persist(instructor);
 		em.getTransaction().commit();
 	}
 
-	public void updateInstructor(Instructor instructor) {
+	public void update(Instructor instructor) {
 		em.getTransaction().begin();
 		em.merge(instructor);
 		em.getTransaction().commit();
 	}
 
-	public List<Instructor> listAllInstructors() {
+	public List<Instructor> listAll() {
 		return em.createQuery("select s from Instructor s", Instructor.class).getResultList();
 	}
 
-	public Instructor findInstructorById(int reg) {
+	public Instructor findById(int reg) {
 		return em.find(Instructor.class, reg);
 	}
 
-	public List<Instructor> findInstructorByName(String name) {
+	public List<Instructor> findByName(String name) {
 		TypedQuery<Instructor> query = em.createNamedQuery("Instructor.findByName", Instructor.class);
 		query.setParameter("name", name);
 		return query.getResultList();
 	}
 
-	public void removeInstructor(int registration) {
+	public void remove(int registration) {
 		em.getTransaction().begin();
-		Instructor instructorToRemove = findInstructorById(registration);
+		Instructor instructorToRemove = findById(registration);
 		if (instructorToRemove != null) {
 			em.remove(instructorToRemove);
 		}
