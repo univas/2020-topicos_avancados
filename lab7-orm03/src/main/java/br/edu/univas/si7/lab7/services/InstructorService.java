@@ -10,7 +10,7 @@ import br.edu.univas.si7.lab7.entities.Instructor;
 public class InstructorService {
 
 	@Autowired
-	InstructorDAO instructorDAO;
+	private InstructorDAO instructorDAO;
 
 	public void saveInstructor(Instructor instructor) {
 		instructorDAO.save(instructor);
