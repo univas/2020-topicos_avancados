@@ -1,4 +1,4 @@
-package br.edu.univas.si7.lab7.service;
+package br.edu.univas.si7.lab7.rest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.univas.si7.lab7.entities.Student;
+import br.edu.univas.si7.lab7.rest.support.StudentErrorResponse;
+import br.edu.univas.si7.lab7.rest.support.StudentNotFoundException;
 
 @RestController
 @RequestMapping("/api")
-public class StudentRestService {
+public class StudentRest {
 
 	private List<Student> studentList;
 	

@@ -1,4 +1,4 @@
-package br.edu.univas.si7.lab7.service;
+package br.edu.univas.si7.lab7.rest.support;
 
 public class StudentNotFoundException extends RuntimeException {
 

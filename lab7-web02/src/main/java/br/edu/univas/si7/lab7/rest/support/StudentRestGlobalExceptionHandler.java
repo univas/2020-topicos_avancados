@@ -1,4 +1,4 @@
-package br.edu.univas.si7.lab7.service;
+package br.edu.univas.si7.lab7.rest.support;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

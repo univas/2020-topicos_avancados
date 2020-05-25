@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/test")
-public class HelloService {
+public class HelloRest {
 
 	// add code for the "/hello" endpoint
 

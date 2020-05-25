@@ -12,14 +12,14 @@
 
 <c:if test="${empty studentList}">
 	<h3>The student list is empty.</h3>
+	<br/>
+	<a href="/lab7-web01/NewStudent.jsp">Create new Student</a>
 </c:if>
 
 <c:if test="${not empty studentList}">
 
 	<a href="/lab7-web01/NewStudent.jsp">Create new Student</a>
-
 	<table border=true>
-	
 		<tr>
 			<th>Register</th>
 			<th>Name</th>
