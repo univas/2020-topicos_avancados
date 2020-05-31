@@ -60,15 +60,4 @@ public class StudentRest {
 		error.setTimeStamp(System.currentTimeMillis());
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 	}
-	
-	//movido para a classe StudentRestGlobalExceptionHandler
-//	//handle generic exceptions
-//	@ExceptionHandler
-//	public ResponseEntity<StudentErrorResponse> handleGenericException(Exception ex) {
-//		StudentErrorResponse error = new StudentErrorResponse();
-//		error.setStatus(HttpStatus.BAD_REQUEST.value());
-//		error.setMessage(ex.getMessage());
-//		error.setTimeStamp(System.currentTimeMillis());
-//		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-//	}
 }
