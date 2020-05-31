@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.edu.univas.si7.lab7</groupId>
-	<artifactId>lab7-web02</artifactId>
+	<artifactId>lab7-rest01</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
-	<name>lab7-web02 Maven Webapp</name>
+	<name>lab7-rest01 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -15,9 +15,8 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 
 		<spring.version>5.2.5.RELEASE</spring.version>
-		<hibernate.version>5.4.10.Final</hibernate.version>
+		<m2e.jpa.activation>false</m2e.jpa.activation>
 	</properties>
-
 	<dependencies>
 
 		<!-- Add Spring MVC and REST support -->
@@ -53,7 +52,7 @@
 	<!-- Support for Maven WAR Plugin -->
 
 	<build>
-		<finalName>lab7-web02</finalName>
+		<finalName>lab7-rest01</finalName>
 
 		<pluginManagement>
 			<plugins>
