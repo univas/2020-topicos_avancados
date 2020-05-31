@@ -53,7 +53,7 @@ public class HelloServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String email = req.getParameter("email");
 		
-		resp.getWriter().append("Email recebido: " + email);
+		resp.getWriter().append("Email recebido pelo Servlet via POSt: " + email);
 	}
 	
 }
