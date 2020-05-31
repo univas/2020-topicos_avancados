@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+   app_server:
+      image: boot02
+      networks:
+         - my-net
+      ports:
+         - 7070:8080
+      depends_on: 
+         - db_server
+
+   db_server:
+      image: db-boot02
+      networks:
+         - my-net
+      environment:
+         - DB_ENVIRONMENT_VARIABLE=any_value
+
+networks:
+   my-net:
