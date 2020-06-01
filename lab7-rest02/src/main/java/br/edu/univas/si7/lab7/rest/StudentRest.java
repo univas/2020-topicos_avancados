@@ -76,6 +76,8 @@ public class StudentRest {
 	public ResponseEntity<StudentErrorMessage> hangleException(StudentException ex) {
 		StudentErrorMessage error = new StudentErrorMessage();
 		
+		ex.printStackTrace();
+		
 		error.setStatus(HttpStatus.BAD_REQUEST.value());
 		error.setMessage(ex.getMessage());
 		error.setTimeStamp(System.currentTimeMillis());

@@ -30,12 +30,10 @@ public class StudentService {
 	}
 	
 	public Student createStudent(Student newStudent) {
-
 		try {
 			studentDAO.save(newStudent);
 		} catch(Exception e) {
-			e.printStackTrace();
-			throw new StudentException("Error creating new student: " + newStudent);
+			throw new StudentException("Error creating new student: " + newStudent, e);
 		}
 		return newStudent;
 	}
