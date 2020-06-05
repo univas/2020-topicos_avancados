@@ -11,7 +11,7 @@ INSERT INTO users VALUES ('jonas','{noop}secretaria123',1);
 INSERT INTO users VALUES ('julia','{noop}admin123',1);
 
 
--- Table authorities
+-- Table authorities (roles)
 CREATE TABLE authorities (
   username varchar(50) NOT NULL,
   authority varchar(50) NOT NULL,

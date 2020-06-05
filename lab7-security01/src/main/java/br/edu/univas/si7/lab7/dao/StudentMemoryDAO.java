@@ -12,26 +12,26 @@ import br.edu.univas.si7.lab7.entities.Student;
 @Repository
 public class StudentMemoryDAO {
 
-	private Map<Integer, Student> studentList = new HashMap<>();
+	private Map<Integer, Student> studentMap = new HashMap<>();
 
 	public void save(Student student) {
-		studentList.put(student.getRegister(), student);
+		studentMap.put(student.getRegister(), student);
 	}
 
 	public void update(Student student) {
-		studentList.put(student.getRegister(), student);
+		studentMap.put(student.getRegister(), student);
 	}
 
 	public List<Student> listAll() {
-		return new ArrayList<Student>(studentList.values());
+		return new ArrayList<Student>(studentMap.values());
 	}
 
 	public Student findById(int register) {
-		return studentList.get(register);
+		return studentMap.get(register);
 	}
 
 	public void remove(int register) {
-		studentList.remove(register);
+		studentMap.remove(register);
 	}
 
 	public void remove(Student toRemove) {

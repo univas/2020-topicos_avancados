@@ -48,7 +48,7 @@ public class StudentSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.DELETE, "/api/student/**").hasRole("ADMIN")
 
 			.and()
-			.httpBasic()
+			.httpBasic() //tipo de autenticação
 			.and()
 			.csrf().disable() //look at https://www.baeldung.com/spring-security-csrf
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

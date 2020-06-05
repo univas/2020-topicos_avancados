@@ -16,7 +16,6 @@
 
 		<spring.version>5.2.5.RELEASE</spring.version>
 		<springsecurity.version>5.3.1.RELEASE</springsecurity.version>
-		<hibernate.version>5.4.10.Final</hibernate.version>
 	</properties>
 
 	<dependencies>
@@ -32,24 +31,11 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>${springsecurity.version}</version>
 		</dependency>
+
 		<!-- Add Spring MVC and REST support -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-
-		<!-- transactions -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-
-		<!-- supporting classes for using hibernate -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 
@@ -60,11 +46,25 @@
 			<version>2.9.10.4</version>
 		</dependency>
 
+		<!-- supporting classes for using datasource -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 		<!-- connection pool -->
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
 			<version>0.9.5.4</version>
+		</dependency>
+
+		<!-- Postgres -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.4.1212</version>
 		</dependency>
 
 		<!-- Add Servlet support for Spring's AbstractAnnotationConfigDispatcherServletInitializer -->
@@ -80,25 +80,9 @@
 			<artifactId>javax.servlet.jsp-api</artifactId>
 			<version>2.3.1</version>
 		</dependency>
-
-		<!-- hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-
-		<!-- Postgres -->
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.4.1212</version>
-		</dependency>
-
 	</dependencies>
 
 	<!-- Support for Maven WAR Plugin -->
-
 	<build>
 		<finalName>lab7-security01</finalName>
 
